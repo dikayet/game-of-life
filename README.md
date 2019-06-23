@@ -1,0 +1,1 @@
+Application implementing Conway's Game of Life cellular automaton. Made with vanilla JavaScript, HTML, CSS.
