@@ -142,6 +142,7 @@ h1 {
 #ditails {
   position: relative;
   z-index: -1;
+  overflow: scroll;
 }
 
 #details .lightbox,
@@ -160,6 +161,7 @@ h1 {
 #details .content {
   padding-top: 5rem;
   background-color: #F2F2F2;
+  overflow: scroll;
 }
 #details .content ol {
   list-style: none;
