@@ -62,7 +62,7 @@ const selectCells = (e) => {
     let { r, c } = el.dataset;
     if(historyArr.length > 0){
       historyArr = [];
-      prevBtn.classList.add('disabled');
+      toggleDisabledClass([[prevBtn, true]])
     }
     if (unselectCellMode){
       el.classList.remove('active');
@@ -281,10 +281,7 @@ grid.addEventListener('mousedown', e => {
 document.addEventListener('mouseup', () => {
   mousedown = false;
   unselectCellMode = false;
-  if (isPausedOnHover){
-    play();
-  }
-
+  if (isPausedOnHover) play();
 });
 grid.addEventListener('mouseover', selectCells);
 playBtn.addEventListener('click', play);
