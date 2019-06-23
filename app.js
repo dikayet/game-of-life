@@ -291,6 +291,7 @@ nextBtn.addEventListener('click', next);
 prevBtn.addEventListener('click', prev);
 
 detailsOpenBtn.addEventListener('click', () => {
+  details.style.display = 'block';
   if (details.classList.contains('hide')){
     details.classList.remove('hide');
   }
@@ -299,6 +300,9 @@ detailsOpenBtn.addEventListener('click', () => {
 detailsCloseBtn.addEventListener('click', () => {
   details.classList.remove('show');
   details.classList.add('hide');
+  setTimeout(() => {
+    details.style.display = 'none';
+  }, 700);
 });
 
 // * INIT CALLING

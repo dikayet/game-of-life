@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
 .cell, .cell::after, .cell::before,
 #grid, #grid::before, #grid::after {
 	-webkit-user-select: none;
@@ -16,6 +21,8 @@ h1 {
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   text-transform: uppercase;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 .wrapper {
   max-width: 65%;
@@ -47,8 +54,18 @@ h1 {
   display: flex;
   align-items: center;
 }
+#controls > div {
+  display: flex;
+  width: 100%;
+}
+
+#controls .inf {
+  margin-left: 2rem;
+}
+
 #controls button,
 #details button {
+  white-space: nowrap;
   font-family: 'Montserrat', sans-serif;
   background-color: #fff;
   font-size: 1em;
@@ -61,6 +78,9 @@ h1 {
   border: none;
   cursor: pointer;
   transition: background .1s ease-in;
+}
+#controls > div button:last-of-type {
+  margin-right: 0;
 }
 #controls svg,
 #details svg {
@@ -117,6 +137,11 @@ h1 {
 }
 #detailsCloseBtn img {
   margin-right: 0;
+}
+
+#ditails {
+  position: relative;
+  z-index: -1;
 }
 
 #details .lightbox,
@@ -265,23 +290,62 @@ h1 {
   }
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1200px) {
   .wrapper {
-    max-width: 90%;
+    max-width: 80%;
   }
-  #controls {
-    flex-wrap: wrap;
+}
+@media all and (max-width: 900px) {
+  .wrapper, #details .content ol {
+    max-width: 90%;
   }
   #controls span {
     display: none;
   }
+  #controls p {
+    font-size: 1rem;
+  }
+  #controls > div {
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
   #controls button {
-    padding: .5rem 1rem;
+    padding: .5rem 1rem !important;
   }
   #controls svg {
+    max-height: 2rem;
     margin: 0;
+  }
+  #detailsOpenBtn svg,
+  #detailsCloseBtn svg {
+    max-height: 1.5rem;
   }
   #iterationNum {
     display: inline-block !important;
+  }
+  #details .content {
+    padding-top: 1rem;
+    background-color: #F2F2F2;
+  }
+}
+@media all and (max-width: 500px) {
+  .wrapper {
+    max-width: 95%;
+  }
+  #controls {
+    flex-wrap: wrap;
+  }
+  #controls .inf {
+    margin-left: 0;
+  }
+  .cell {
+    border-radius: 1px;
+  }
+  #details .content li {
+    margin-bottom: 1rem;
+  }
+  .cell {
+    padding: calc(1% - .5px);
+    margin: .5px;
   }
 }
