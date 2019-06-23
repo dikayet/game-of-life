@@ -6,7 +6,7 @@
 	cursor: default;
 }
 
-body {
+body, html {
   background-color: #F2F2F2;
   font-family: 'Montserrat', sans-serif;
   font-size: .8rem;
@@ -72,6 +72,13 @@ h1 {
   background-color: rgb(250, 249, 249);
   color: rgb(146, 146, 146);
   pointer-events: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 #nextBtn {

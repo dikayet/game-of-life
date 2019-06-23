@@ -185,7 +185,13 @@ const toggleStartBtn = (bool = true) => {
   }
 }
 
+const next = () => {
+  if(isPlaying || randomizeMode) return;
+  playRound();
+}
+
 const prev = () => {
+  if(isPlaying) return;
   if (historyArr.length < 1) return;
   let newArr = [...gridArr];
   let prevGridEmpty = noCellsActive(gridArr);
@@ -284,7 +290,7 @@ grid.addEventListener('mouseover', selectCells);
 playBtn.addEventListener('click', play);
 pauseBtn.addEventListener('click', pause);
 resetBtn.addEventListener('click', reset);
-nextBtn.addEventListener('click', playRound);
+nextBtn.addEventListener('click', next);
 prevBtn.addEventListener('click', prev);
 
 detailsOpenBtn.addEventListener('click', () => {
